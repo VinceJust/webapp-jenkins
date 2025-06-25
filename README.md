@@ -153,18 +153,23 @@ Der Pipeline-Lauf wurde manuell über die Jenkins-Oberfläche gestartet. Die Kon
 ## Reflexion
 
 **1. Welche Schritte waren notwendig, um Jenkins lokal mit Docker zum Laufen zu bringen?**
+
 Custom Docker-Image mit Node.js erstellen, Container starten, Web-UI konfigurieren (Unlock, Plugins, Admin-User).
 
 **2. Was ist der Zweck der Datei Jenkinsfile, und wo muss sie im Verhältnis zu deinem Anwendungscode liegen?**
+
 Definiert die CI-Pipeline als Code. Muss im Root-Verzeichnis des Git-Repositories liegen.
 
 **3. Beschreibe die zwei Hauptstages, die du in deiner Pipeline definiert hast, und was der Hauptzweck der Steps in jeder Stage ist.**
+
 **Checkout**: Code aus Git holen. **Build**: Dependencies installieren (`npm ci`) und App bauen (`npm run build`).
 
 **4. Wie hast du in Jenkins konfiguriert, von welchem Git-Repository und welchem Branch der Code für die Pipeline geholt werden soll?**
+
 Pipeline-Konfiguration: "Pipeline script from SCM", Git-URL eingeben, Branch `*/main` wählen.
 
 **5. Was ist der Unterschied zwischen dem `checkout scm` Step in deiner Pipeline und dem `git clone` Befehl, den du manuell im Terminal ausführen würdest?**
+
 `checkout scm` nutzt Jenkins-Konfiguration automatisch. `git clone` ist manueller Befehl ohne Jenkins-Kontext.
 
 ---
